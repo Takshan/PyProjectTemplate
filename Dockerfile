@@ -24,7 +24,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
 
 RUN apt-get -y update
 RUN ln -s /usr/bin/python3 /usr/bin/python 
-# RUN ln -s /usr/bin/pip3 /usr/bin/pip
+RUN ln -s /usr/bin/pip3 /usr/bin/pip
 
 
 # Openbabel installation
