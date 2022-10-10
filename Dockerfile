@@ -72,11 +72,8 @@ RUN pip install -r /home/app/requirements.txt
 
 
 RUN apt-get update && apt-get upgrade -y
-# ENV NVIDIA_VISIBLE_DEVICES all
-# ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
-# RUN apt-get -y update
 RUN ln -snf /bin/bash /bin/sh
-# RUN "echo 0 | tee -a /sys/bus/pci/devices/0000\:01\:00.0/numa_node"
+RUN "echo 0 | tee -a /sys/bus/pci/devices/0000\:01\:00.0/numa_node"
 
 RUN useradd takshan
 USER takshan
