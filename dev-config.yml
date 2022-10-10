@@ -1,0 +1,60 @@
+model:
+  type: resnet34
+  network: ResNet34
+  hidden_dim: 128
+  filter_size: 64
+  block_layers: [3, 4, 6, 3]
+  activation: sigmoid
+  classes: 1600
+
+state:
+  model: /home/takshan/Phd/DEV/AiSite/model/ethereal-terrain-749.h5
+  checkpoint: ./models_ckpt/
+
+train:
+  seed: 2022
+  batch_size: 8
+  epochs: 300
+  optimizer:
+    type: adam
+    lr: 1.e-3
+    weight_decay: 0.
+    beta1: 0.95
+    beta2: 0.999
+  scheduler:
+    type: ExponentialDecay
+    initial_lr: 1.e-3
+    decay_steps: 100000
+    decay_rate: .89
+    staircase: False
+  validation:
+    batch_size: 8
+
+callback:
+  early_stopping:
+    monitor: val_loss
+    min_delta: 0.0001
+    patience: 10
+    verbose: True
+  checkpoint:
+    monitor: loss
+    verbose: True
+    save_best_only: True
+    mode: min
+  tensorboard:
+    log_dir: ./logs/debug
+    histogram_freq: 10
+    write_graph: True
+    write_images: True
+    update_freq: "batch"
+  progressbar: False
+early_stopping:
+  seed: 45
+dataset:
+  test: /home/takshan/COSMIC/EVALUATION_SCPDB/LARGE
+  validation: /DATA/lab09/validation/
+  train: /DATA/lab09/scPDB/
+
+version: 0.0.2
+# Python code
+path: "dev-config.yml"

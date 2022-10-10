@@ -1,0 +1,22 @@
+services:
+  rahul-tfgpu:
+    hostname: rahultfgpu
+    container_name: Native-nvcr-aisite
+
+    # image: tensorflow/tensorflow:latest-gpu
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # command: python train.py --data_dir /data --model_dir /model --train_steps 1000 --batch_size 32 --learning_rate 0.001 --log_dir /logs
+    volumes:
+      - ./:/home/app/
+      - /home/takshan/FIRECUDA/LATEST:/home/WAREHOUSE/
+    ports:
+      - 9999:8888
+    working_dir: /home/app/
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [ gpu ]

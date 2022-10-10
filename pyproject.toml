@@ -1,0 +1,136 @@
+[tool.black]
+line-length = 80
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+[tool.pycln]
+all = true
+exclude = "__init__.py"
+
+
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.poetry]
+name = "aisite"
+version = "0.2.0"
+description = ""
+authors = ["takshan <mrbrahma.rahul@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.11"
+jupyter = "^1.0.0"
+tensorflow = "^2.9.1"
+black = "^22.3.0"
+mlem = "^0.2.3"
+py3Dmol = "^1.8.0"
+rdkit = "^2022.3.3"
+autopep8 = "1.7.0"
+Babel = "2.10.3"
+bandit = "1.7.4"
+blinker = "1.4"
+CacheControl = "0.12.11"
+cfgv = "3.3.1"
+classify-imports = "4.1.0"
+commonmark = "0.9.1"
+configobj = "5.0.6"
+crcmod = "1.7"
+dill = "0.3.5.1"
+distlib = "0.3.5"
+distro = "1.7.0"
+docker-pycreds = "0.4.0"
+docutils = "0.18.1"
+easydict = "1.9"
+gast = "0.4.0"
+gitdb = "4.0.9"
+GitPython = "3.1.27"
+google-pasta = "0.2.0"
+gviz-api = "1.10.0"
+huggingface-hub = "0.8.1"
+identify = "2.5.2"
+imagesize = "1.4.1"
+ipython_genutils = "0.2.0"
+isort = "5.10.1"
+llvmlite = "0.38.1"
+mccabe = "0.6.1"
+mlflow = "1.27.0"
+msgpack = "1.0.4"
+munkres = "1.1.4"
+mypy = "0.971"
+mypy-extensions = "0.4.3"
+nodeenv = "1.7.0"
+numba = "0.55.2"
+pandas = "1.4.3"
+pathtools = "0.1.2"
+pbr = "5.10.0"
+pep517 = "0.8.2"
+platformdirs = "2.5.2"
+ply = "3.11"
+pre-commit = "2.20.0"
+prometheus-flask-exporter = "0.20.2"
+pyarrow = "8.0.0"
+pyasn1 = "0.4.8"
+pycairo = "1.21.0"
+pyDeprecate = "0.3.2"
+pyflakes = "2.4.0"
+PyQt5 = "5.15.7"
+PyQt5-sip = "12.11.0"
+pyspellchecker = "0.6.3"
+pytest = "7.1.2"
+pytorch-lightning = "1.7.4"
+querystring-parser = "1.2.4"
+regex = "2022.7.25"
+reorder-python-imports = "3.8.2"
+reportlab = "3.5.68"
+requests-toolbelt = "0.9.1"
+"ruamel.yaml" = "0.17.21"
+"ruamel.yaml.clib" = "0.2.6"
+scikit-plot = "0.3.7"
+smmap = "5.0.0"
+snowballstemmer = "2.2.0"
+sparse = "0.13.0"
+Sphinx = "5.0.2"
+sphinxcontrib-applehelp = "1.0.2"
+sphinxcontrib-devhelp = "1.0.2"
+sphinxcontrib-htmlhelp = "2.0.0"
+sphinxcontrib-jsmath = "1.0.1"
+sphinxcontrib-qthelp = "1.0.3"
+sphinxcontrib-serializinghtml = "1.1.5"
+stevedore = "4.0.0"
+streamlit = "1.11.0"
+tensorboard-plugin-profile = "2.8.0"
+tensorflow-addons = "0.17.1"
+tokenizers = "0.12.1"
+torch = "1.12.1"
+torchmetrics = "0.9.3"
+tqdm = "4.64.0"
+transformers = "4.21.1"
+typeguard = "2.13.3"
+validators = "0.20.0"
+virtualenv = "20.15.1"
+vtk = "9.1.0"
+wandb = "0.12.21"
+webencodings = "0.5.1"
+yapf = "0.32.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
