@@ -1,4 +1,4 @@
-name: make_better_defaults
+name: pyprojecttemplate
 channels:
   - defaults
 dependencies:
@@ -28,5 +28,5 @@ dependencies:
   - requests
   - pathlib
   - fsspec
-  - python=3.8
+  - python=3.10
 
