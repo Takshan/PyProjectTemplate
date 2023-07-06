@@ -9,7 +9,7 @@ keras
 pandas
 pillow==9.2.0
 pyopenssl==22.0.0
-scipy==1.8.1
+scipy==1.10.0
 #tensorflow
 wandb~=0.12.21
 scikit-learn~=1.1.1
